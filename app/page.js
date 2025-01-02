@@ -1,35 +1,76 @@
+"use client";
 
-import './globals.css';
-export default function Home() {
+import { useState } from "react";
+import { redirect } from "next/navigation";
+
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Simple authentication logic
+    if (username === "admin" && password === "admin") {
+      redirect("http://localhost:3000/home"); // Redirect on success
+    } else {
+      setError("Username or password is incorrect"); // Show error message
+    }
+  };
+
   return (
-    <>
+    <section className="bg-[#E9EFFE] min-h-screen flex items-center justify-center">
+      <div className="container mx-auto max-w-md bg-white shadow-lg rounded-lg p-8">
+        {/* Login Header */}
+        <h2 className="text-2xl font-bold text-center text-[#3A40D8]">
+          Login to My Council AI
+        </h2>
 
-      {/* hero section */}
-      <section className=" rounded-b-[40px] bg-[#EEF3FF]">
-        <div className=" container py-16 flex justify-between m-d:flex-col">
-          <div className=" flex flex-col items-start justify-evenly  m-d:w-[100%] w-[52%]">
-            <h1 className=" font-manrope font-[800] text-[48px] leading-[70px]">Empowering Local Councils with <span className=" underline text-[#3A40D8]">Smarter Decisions</span>, Faster.</h1>
-            <h2 className=" mt-5 text-[#202020] font-inter font-[400] text-[16px] leading-[28px]">Our AI-powered software simplifies data retrieval from disparate sources, providing instant, reliable access to the information councils need. With streamlined tools for decision-making and enhanced public transparency, we help local governments save time, foster accountability, and deliver better outcomes for their communities.</h2>
-            <a className=" mt-10 py-[15px] px-[25px] text-[#fff] rounded-[100px] bg-[#3A40D8] font-inter font-[600] text-[16px] leading-[18px] no-underline " href="">
-              Get a Demo
-            </a>
+        {/* Login Form */}
+        <form className="mt-6 space-y-4" onSubmit={handleLogin}>
+          {/* Username Field */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Username</label>
+            <input
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]"
+            />
           </div>
-          <div className=" m-d:w-[100%] w-[35%]">
-            <img className="w-full object-contain" src="images/hero.png" />
-          </div>
-        </div>
-      </section>
 
-      {/* rate payer section */}
-      <section style={{"transform":"translateY(-50px)"}} className='z-[2]'>
-        <div className="container flex justify-center">
-          <div style={{"boxShadow": "0px 4px 36px 0px #00000014"}} className=' bg-white flex flex-col items-center py-9 w-[88%] border-solid rounded-[20px] border-[#EFEFEF] border-[1px]'>
-            <h1 className='w-[50%] font-manrope font-[700] text-[26px] leading-[33px] text-center'>Are You a <span className=' text-[#3A40D8]'>Rate Payer</span>? Or a <span className=' text-[#3A40D8]'>Community Advocacy Group</span>?</h1>
-            <h2 className=' w-[80%] mt-3 font-inter fony-[400] text-[15px] leading-[23px] text-[#545454] text-center'>Get answers with Al: Ask your Council about policies, budgets, and more. Ensure accountability from Council officers and management. Use Your Council Ai for information to develop your community project.</h2>
+          {/* Password Field */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]"
+            />
           </div>
-        </div>
-      </section>
 
-    </>
+          {/* Error Message */}
+          {error && (
+            <p className="text-red-500 text-sm text-center">{error}</p>
+          )}
+
+          {/* Login Button */}
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-[#1D4ED8] text-white px-4 py-2 rounded-lg hover:bg-[#1E3A8A] transition"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
-}
+};
+
+export default Login;
