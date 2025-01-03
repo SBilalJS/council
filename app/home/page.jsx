@@ -130,7 +130,7 @@ export default function Home() {
     </div>
 
     {/* Cards Section */}
-    <div className="grid grid-cols-3 gap-6  m-d:grid-cols-2 s-m:grid-cols-1 s-m:place-items-center ">
+    <div className="grid grid-cols-3 gap-6  m-d:grid-cols-2 !s-m:grid-cols-1 s-m:place-items-center ">
       {/* Card 1 */}
       <div className="bg-white shadow-md card rounded-lg p-6 flex flex-col items-center text-center space-y-4">
         <div className="">
