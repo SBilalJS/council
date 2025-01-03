@@ -1,0 +1,17 @@
+/* Base card styles */
+.card {
+    height: 330px;
+    width: 100%;
+    background-color: white;
+    border-radius: 30px; /* Rounded corners */
+    padding: 1rem; /* Padding inside the card */
+   
+    text-align: center; /* Center the text */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Default shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition on hover */
+  }
+  
+  /* Hover effect for the card */
+  .card:hover {
+    box-shadow: 0 0 12px rgba(58, 64, 216, 0.32); /* Custom shadow on hover */
+  }
