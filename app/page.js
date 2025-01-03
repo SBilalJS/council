@@ -21,15 +21,27 @@ export default function Home() {
       </section>
 
       {/* rate payer section */}
-      <section style={{"transform":"translateY(-50px)"}} className='z-[2]'>
+      <section style={{ "transform": "translateY(-50px)" }} className='z-[2]'>
         <div className="container flex justify-center">
-          <div style={{"boxShadow": "0px 4px 36px 0px #00000014"}} className=' bg-white flex flex-col items-center py-9 w-[88%] border-solid rounded-[20px] border-[#EFEFEF] border-[1px]'>
+          <div style={{ "boxShadow": "0px 4px 36px 0px #00000014" }} className=' bg-white flex flex-col items-center py-9 w-[88%] border-solid rounded-[20px] border-[#EFEFEF] border-[1px]'>
             <h1 className='w-[50%] font-manrope font-[700] text-[26px] leading-[33px] text-center'>Are You a <span className=' text-[#3A40D8]'>Rate Payer</span>? Or a <span className=' text-[#3A40D8]'>Community Advocacy Group</span>?</h1>
             <h2 className=' w-[80%] mt-3 font-inter fony-[400] text-[15px] leading-[23px] text-[#545454] text-center'>Get answers with Al: Ask your Council about policies, budgets, and more. Ensure accountability from Council officers and management. Use Your Council Ai for information to develop your community project.</h2>
           </div>
         </div>
       </section>
 
+      {/* ai knowledge section */}
+      <section>
+        <div className="container">
+          <div className=' w-[50%]'>
+            <h1 className=' inline-block text-center font-inter font-[500] text-[14px] leading-[12px] bg-[#E3ECFE]'>
+              Empowering local councils
+            </h1>
+            <h2 className='font'>Your <span className='text-[#3A40D8]'>AI knowledge hub</span> for information</h2>
+            <a href="">BOOK A DEMO TODAY <i className="fal fa-arrow-right"></i></a>
+            </div>
+        </div>
+      </section>
     </>
   );
 }
